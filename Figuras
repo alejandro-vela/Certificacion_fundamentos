@@ -1,0 +1,49 @@
+package figura;
+
+public class Figura {
+    
+    static int TamañoCuadrado = 3;
+    static int TamañoRombo = 3;
+    static int TamañoTriangulo = 3;
+    static char Asteriscos='*';
+    
+    public static void main(String[] Alejo_Muñoz) {
+        
+      
+        
+
+        Cuadrado(TamañoCuadrado);
+        {
+            Saltos();
+        }
+
+        for (int Triangulo = 1; Triangulo <= TamañoTriangulo; ++Triangulo) {
+                for (int j = 1; j <= TamañoTriangulo; ++j) {                 
+                    System.out.println(Asteriscos);
+                }
+                Saltos();
+        }
+    }
+
+    private static void Saltos() {
+        System.out.println(" ");
+        System.out.println(" ");
+    }
+
+    private static void Cuadrado(int TamañoCuadrado) {
+        for (int i = 1; i <= TamañoCuadrado; ++i) {
+            System.out.println(" ");
+            for (int j = 1; j <= TamañoCuadrado; ++j) {
+                System.out.print(Asteriscos);
+            }
+        }
+
+//int TamañoTotalRombo=TamañoRombo+2;
+        //for (int i = 1; i <= TamañoRombo; ++i) {
+        //      System.out.println(" ");
+        //    for (int j = 0; j <= TamañoRombo; j++) {
+        //      System.out.print(" * ");
+        //}
+        //}
+    }
+}
