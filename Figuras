@@ -1,9 +1,10 @@
-package Code.AlejoMuñoz.Figuras;
+package figura;
 
 public class Figura {
-    static int TamañoCuadrado = 1;
-    static int TamañoRombo = 1;
-    static int TamañoTriangulo = 1;
+
+    static int TamañoCuadrado = 3;
+    static int TamañoRombo = 3;
+    static int TamañoTriangulo = 3;
     static char Asteriscos = '*';
     static char Espacios = ' ';
 
@@ -14,6 +15,10 @@ public class Figura {
             Saltos();
         }
         Triangulo(TamañoTriangulo);
+        {
+            Saltos();
+        }
+        Rombo(TamañoRombo);
         {
             Saltos();
         }
@@ -56,6 +61,18 @@ public class Figura {
             }
 
         }// FOR
+
+    }
+
+    private static void Rombo(int TamañoRombo) {
+        Triangulo(TamañoTriangulo);
+        {
+            int Total_Espacios = TamañoTriangulo-- ;
+            for (int Espacios_Abajo = 0; Espacios_Abajo <= TamañoTriangulo; Espacios_Abajo++) {
+                Espacio();
+            }
+            Asteriscos();
+        }
 
     }
 
