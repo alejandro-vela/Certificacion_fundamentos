@@ -1,4 +1,4 @@
-package figura;
+package Code.AlejoMuñoz.Figuras;
 
 public class Figura {
 
@@ -15,10 +15,6 @@ public class Figura {
             Saltos();
         }
         Triangulo(TamañoTriangulo);
-        {
-            Saltos();
-        }
-        Rombo(TamañoRombo);
         {
             Saltos();
         }
@@ -61,18 +57,6 @@ public class Figura {
             }
 
         }// FOR
-
-    }
-
-    private static void Rombo(int TamañoRombo) {
-        Triangulo(TamañoTriangulo);
-        {
-            int Total_Espacios = TamañoTriangulo-- ;
-            for (int Espacios_Abajo = 0; Espacios_Abajo <= TamañoTriangulo; Espacios_Abajo++) {
-                Espacio();
-            }
-            Asteriscos();
-        }
 
     }
 
