@@ -1,10 +1,10 @@
-package Code.AlejoMuñoz.Figuras;
+package figura;
 
 public class Figura {
 
     static int TamañoCuadrado = 3;
     static int TamañoRombo = 3;
-    static int TamañoTriangulo = 3;
+    static int TamañoTriangulo = 5;
     static char Asteriscos = '*';
     static char Espacios = ' ';
 
