@@ -1,0 +1,109 @@
+package soccer;
+
+public class League {
+
+    public static void main(String[] args) {
+
+        Team[] theTeams = createTeams();
+        
+        Game[] theGames = createGames(theTeams);
+
+        Player player1 = new Player();
+
+        Team team1 = new Team();
+
+        player1.playerName = "George Eliot";
+
+        Player player2 = new Player();
+        player2.playerName = "Graham Greene";
+
+        Player player3 = new Player();
+        player3.playerName = "Geoffrey Chaucer";
+
+        team1.teamName = "The Greens";
+
+        Player[] thePlayers = {player1, player2, player3};
+
+        team1.playerArray = thePlayers;
+        /**
+         * for (Player thePlayer : team1.playerArray) {
+         * System.out.println(thePlayer.playerName); }
+         *
+         */
+
+        Team team2 = new Team();
+        team2.teamName = "The Reds";
+
+        team2.playerArray = new Player[3];
+
+        team2.playerArray[0] = new Player();
+        team2.playerArray[0].playerName = "Robert Service";
+
+        team2.playerArray[1] = new Player();
+        team2.playerArray[1].playerName = "Robbie Burns";
+
+        team2.playerArray[2] = new Player();
+        team2.playerArray[2].playerName = "Rafael Sabatini";
+
+        /**
+         * for (Player thePlayer : team2.playerArray) {
+         * System.out.println(thePlayer.playerName); }
+         *
+         */
+        //Game currGame = new Game();
+        Game currGame = theGames[0];
+
+//        currGame.homeTeam = team1;
+//        currGame.awayTeam = team2;
+        Goal goal1 = new Goal();
+
+        goal1.thePlayer = currGame.homeTeam.playerArray[2];
+        goal1.theTeam = currGame.homeTeam;
+        goal1.theTime = 55;
+
+        Goal[] theGoals = {goal1};
+        currGame.goals = theGoals;
+
+        System.out.println("Goal scored after "
+                + currGame.goals[0].theTime + " mins by "
+                + currGame.goals[0].thePlayer.playerName + " of "
+                + currGame.goals[0].theTeam.teamName);
+
+        for (Player thePlayer : team2.playerArray) {
+            if (thePlayer.playerName.matches(".*Sab.*")) {
+                System.out.println("Found " + thePlayer.playerName);
+                thePlayer.playerName.split(" ");
+                System.out.println("Last name is "
+                        + thePlayer.playerName.split(" ")[1]);
+
+            }
+
+        }
+        for (Player thePlayer : team1.playerArray) {
+            String name[] = thePlayer.playerName.split(" ");
+            StringBuilder familyNameFirst = new StringBuilder();
+            familyNameFirst.append(name[1]);
+            familyNameFirst.append(", ");
+            familyNameFirst.append(name[0]);
+
+            System.out.println(familyNameFirst);
+            familyNameFirst.delete(0, familyNameFirst.length());
+
+        }
+
+    }
+
+    public static Team[] createTeams() {
+      Team[] theTeams =  {team1, team2};
+      return theTeams;
+    }
+
+    public static Game[] createGames(Team[] theTeams) {
+        Game theGame = new Game();
+        theGame.homeTeam = theTeams[0];
+        theGame.awayTeam = theTeams[1];
+        Game[] theGames = {theGame};
+        return theGames;
+    }
+
+}
